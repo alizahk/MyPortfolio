@@ -40,7 +40,7 @@ export default function Home() {
       <nav className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-10 py-8 bg-black/20 backdrop-blur-md border-b border-white/5">
         <div className="flex items-center gap-4">
           <div className="font-black text-2xl tracking-tighter uppercase italic text-white hover:text-blue-500 transition-colors cursor-pointer">
-            ALIZAH.STUDIO
+            ALIZAHK
           </div>
           <div className="flex gap-3 items-center ml-2">
             <a href="https://github.com/alizahk" target="_blank" rel="noreferrer" className="opacity-70 hover:opacity-100 transition-opacity">
