@@ -133,7 +133,7 @@ export default function Home() {
       {/* FOOTER */}
       <footer className="relative z-20 py-20 px-10 md:px-32 border-t border-white/5 bg-black flex flex-col md:flex-row justify-between items-center gap-8">
         <div className="text-center md:text-left">
-          <div className="font-black text-xl tracking-tighter uppercase italic mb-2">ALIZAH.STUDIO</div>
+          <div className="font-black text-xl tracking-tighter uppercase italic mb-2">ALIZAHK</div>
           <p className="text-white/20 font-mono text-[9px] tracking-[0.4em] uppercase">© 2026 GUELPH, ONTARIO</p>
         </div>
         <div className="flex gap-6 opacity-30">
