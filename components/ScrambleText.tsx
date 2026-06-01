@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 
-const words = ["FULL STACK DEVELOPER", "COLLABORATOR", "BUILDER", "CURIOUS THINKER", "PROBLEM SOLVER", "CONTINOUS LEARNER"];
+const words = ["FULL STACK DEVELOPER", "AI ENGINEER", "CREATIVE TECHNOLOGIST", "CURIOUS BUILDER", "PROBLEM SOLVER", "RESEARCHER"];
 const chars = "!<>-_\\/[]{}—=+*^?#________";
 
 export default function ScrambleText() {
@@ -13,13 +13,13 @@ export default function ScrambleText() {
     let queue: { from: string; to: string; start: number; end: number; char?: string }[] = [];
     const currentWord = words[index];
     const oldWord = words[index === 0 ? words.length - 1 : index - 1];
-    
     const length = Math.max(oldWord.length, currentWord.length);
+
     for (let i = 0; i < length; i++) {
       const from = oldWord[i] || "";
       const to = currentWord[i] || "";
-        const start = Math.floor(Math.random() * 20);
-        const end = start + Math.floor(Math.random() * 20);
+      const start = Math.floor(Math.random() * 20);
+      const end = start + Math.floor(Math.random() * 20);
       queue.push({ from, to, start, end });
     }
 
@@ -37,7 +37,7 @@ export default function ScrambleText() {
             char = chars[Math.floor(Math.random() * chars.length)];
             queue[i].char = char;
           }
-          output += `<span style="opacity: 0.5">${char}</span>`;
+          output += `<span style="opacity:0.3">${char}</span>`;
         } else {
           output += queue[i].from;
         }
@@ -47,7 +47,7 @@ export default function ScrambleText() {
         frame++;
         raf = requestAnimationFrame(update);
       } else {
-          setTimeout(() => setIndex((prev) => (prev + 1) % words.length), 1400);
+        setTimeout(() => setIndex((prev) => (prev + 1) % words.length), 1600);
       }
     };
 
@@ -56,12 +56,12 @@ export default function ScrambleText() {
   }, [index]);
 
   return (
-    <div className="font-mono font-bold text-white">
-      <p className="text-sm mb-1 tracking-[0.3em] uppercase opacity-90">I AM A</p>
-      <h1 
-        className="text-4xl md:text-6xl text-blue-500" 
-        style={{ minHeight: '1.2em' }}
-        dangerouslySetInnerHTML={{ __html: displayText }} 
+    <div className="font-mono font-bold">
+      <p className="text-sm mb-1 tracking-[0.3em] uppercase" style={{ color: "var(--fg2)" }}>I AM A</p>
+      <h2
+        className="text-3xl md:text-5xl font-black tracking-tighter"
+        style={{ color: "var(--accent)", minHeight: "1.2em" }}
+        dangerouslySetInnerHTML={{ __html: displayText }}
       />
     </div>
   );

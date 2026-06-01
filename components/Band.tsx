@@ -26,7 +26,8 @@ export default function Band() {
       tex.wrapS = tex.wrapT = THREE.ClampToEdgeWrapping;
       tex.repeat.set(1, 1);
       tex.offset.set(0, 0);
-      tex.flipY = false;
+      tex.flipY = true;
+      tex.needsUpdate = true;
     });
   }, [cardFront, cardBack]);
 
@@ -62,8 +63,8 @@ export default function Band() {
         <RigidBody ref={fixed} type="fixed" />
         <RigidBody position={[0.5, 0, 0]} ref={j1} linearDamping={3}><BallCollider args={[0.1]} /></RigidBody>
         <RigidBody position={[1, 0, 0]} ref={j2} linearDamping={3}><BallCollider args={[0.1]} /></RigidBody>
-        <RigidBody position={[1.5, 0, 0]} ref={j3} linearDamping={10} angularDamping={10}><BallCollider args={[0.15]} /></RigidBody>
-        <RigidBody ref={card} type={dragged ? "kinematicPosition" : "dynamic"} linearDamping={6} angularDamping={6}>
+        <RigidBody position={[1.5, 0, 0]} ref={j3} linearDamping={2} angularDamping={2}><BallCollider args={[0.15]} /></RigidBody>
+        <RigidBody ref={card} type={dragged ? "kinematicPosition" : "dynamic"} linearDamping={2} angularDamping={2}>
           <CuboidCollider args={[0.8, 1.125, 0.01]} />
           <group scale={1.2} position={[0, -0.683, -0.05]}
             onPointerDown={(e: any) => { e.target.setPointerCapture(e.pointerId); drag(new THREE.Vector3().copy(e.point).sub(vec.copy(card.current.translation()))); }}
