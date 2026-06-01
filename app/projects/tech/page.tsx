@@ -64,7 +64,7 @@ const projects = [
     year: "2025",
     description: "An elegant web experience featuring immersive visuals and responsive front-end development, showcasing creative design sensibility alongside technical execution.",
     tags: ["Next.js", "React", "TypeScript"],
-    links: { demo: "https://rosewood-reveries.vercel.app/" },
+    links: { demo: "https://rosewood-reveries.vercel.app/", github: "https://github.com/alizahk/rosewood-reveries" },
     image: "/header.png",
   },
 ];
